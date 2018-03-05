@@ -5,7 +5,7 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     name = 'quotes'
     allowed_domains = ['toscrape.com']
-    start_urls = ['http://quotes.toscrape.com/random']
+    start_urls = ['http://quotes.toscrape.com']
 
     def parse(self, response):
         self.log('I just visited: ' + response.url)    
