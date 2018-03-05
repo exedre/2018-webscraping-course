@@ -19,3 +19,8 @@ class AuthorsSpider(scrapy.Spider):
             next_page_url = response.urljoin(next_page_url)
             yield scrapy.Request(url=next_page_url, callback=self.parse)
 
+    def parse_details(self, response):
+        yield {
+            'name': response.css('h3.author-title::text').extract_first(),
+            'birth_date': response.css('span.author-born-date::text').extract_first(),
+        }
