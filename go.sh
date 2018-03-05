@@ -1,2 +1,2 @@
-scrapy runspider QuotesInfiniteScrollSpider.py 
+scrapy runspider quotes_login.py 
 
