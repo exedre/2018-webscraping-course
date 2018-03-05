@@ -8,8 +8,10 @@ class AuthorsSpider(scrapy.Spider):
     start_urls = ['http://quotes.toscrape.com/']
 
     def parse(self, response):
-        
-
+        urls = response.css('div.quote > span > a::attr(href)').extract()
+        for url in urls:
+            url = response.urljoin(url)
+            yield scrapy.Request(url=url, callback=self.parse_details)        
 
         # follow pagination link
         next_page_url = response.css('li.next > a::attr(href)').extract_first()
