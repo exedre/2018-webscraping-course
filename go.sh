@@ -1,2 +1,2 @@
-scrapy genspider quotes toscrape.com
+scrapy runspider quotes.py
 
