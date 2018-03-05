@@ -1,2 +1,2 @@
-scrapy runspider authors.py
+scrapy runspider QuotesInfiniteScrollSpider.py 
 
